@@ -2,6 +2,10 @@
 This doc is investigates on how to develop applications with
 [Mbed OS](https://www.mbed.com/en/platform/mbed-os/)
 
+Further information:
+* [How Mbed works](https://developer.mbed.org/handbook/How-mbed-works)
+* [ARM Mbed GitHub](https://github.com/ARMmbed)
+
 # mbed online  compiler
 Within the online compiler you can create new Mbed OS projects based your
 [mbed enabled board](https://developer.mbed.org/platforms/) and on template
@@ -46,7 +50,7 @@ TBD
   * E.g. [Atom](https://atom.io/)
 * Use different IDEs for different tasks
   * Keil for building and Debugging
-    * How to automate/script Keil Build?
+    * How to automate/script Keil Build? Mbed CLI Tools?
   * E.g. Visual Studio with [Resharper](https://www.jetbrains.com/resharper-cpp/?fromMenu)
   to develop application
     * How to configure build for simulation on localhost?
@@ -70,3 +74,11 @@ must be defined
 * TBD flash binary on target, is this possible?
   * alternative: script to build .hex and copy it to mbed drive
 * TBD debug target, is this possible?
+
+### Mbed CLI Tools
+* :zap: Try out [Mbed CLI Tools](https://docs.mbed.com/docs/mbed-os-handbook/en/latest/getting_started/blinky_cli/)
+
+### Mbed Design
+* [Mbed OS API Reference](https://docs.mbed.com/docs/mbed-os-api-reference/en/latest/)
+* to add support for new microcontroller, api's from hal must be implemented
+  * [Modular Programming in C ](http://www.embedded.com/design/prototyping-and-development/4023876/Modular-Programming-in-C)
