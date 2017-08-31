@@ -5,7 +5,7 @@ The demo app is based on Mbed-OS 5. The app offers a Bluetooth LE Service which 
 [Nordic nRF52-DK](https://developer.mbed.org/platforms/Nordic-nRF52-DK/) with [X-NUCLEO-IKS01A2](https://developer.mbed.org/components/X-NUCLEO-IKS01A2/) shield
 
 <!-- image with size params should be included with html syntax -->
-<img src="target.jpg" alt="Target Device" width="640"/>
+<img src="target_lowres.jpg" alt="Target Device" width="640"/>
 
 ## Build
 See [Custom Setup with GNU ARM embedded Toolchain](mbed.md)
@@ -17,3 +17,6 @@ See [Custom Setup with GNU ARM embedded Toolchain](mbed.md)
 * Connect dev board via USB to computer
 * Copy & Paste ``.hex`` file from build output to mbed USB drive (JLINK)
 * Application is installed and started automatically
+
+## Read sensor data
+TBD
