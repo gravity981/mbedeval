@@ -1,18 +1,19 @@
 # Atom IO editor
-### Setup
-* classic Version
+### Cheatsheet
 * ``ctrl + shift + p`` opens command search mask
-* to install package go to settings (can be found with search mask)
+* ``ctrl + ,`` settings
+* ``ctrl + t`` to open  file
+* ``ctrl + shift + m`` to open markdown preview
 
 ### Additional packages
 * language-batchfile
 * platformio-ide-terminal
+* switch-header-source
 
 ### Open points
 * auto format code?
 * integrated terminal?
 * run gcc, make, etc.?
 
-
-### Alternatives
-[PlatformIO](http://platformio.org/)
+### Other
+* [PlatformIO](http://platformio.org/)
