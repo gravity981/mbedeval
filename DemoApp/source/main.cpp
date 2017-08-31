@@ -33,6 +33,7 @@ static LSM6DSLSensor *acc_gyro = mems_expansion_board->acc_gyro;
 static LSM303AGRAccSensor *accelerometer = mems_expansion_board->accelerometer;
 
 DigitalOut led1(LED1, 1);
+DigitalOut led2(LED2, 0);
 
 const static char     DEVICE_NAME[] = "CAMP17 DEMO NRF";
 static const uint16_t uuid16_list[] = {GattService::UUID_BATTERY_SERVICE,
@@ -87,6 +88,7 @@ void updateSensorValue() {
 void blinkCallback(void)
 {
     led1 = !led1; /* Do blinky on LED1 while we're waiting for BLE events */
+    led2 = !led2;
 
     BLE &ble = BLE::Instance();
     if (ble.gap().getState().connected) {
