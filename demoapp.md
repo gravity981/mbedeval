@@ -22,4 +22,4 @@ The demo app is based on Mbed-OS 5. The app offers a Bluetooth LE Service which 
 * Scan for devices
 * Connect to **CAMP17 DEMOAPP**
 
-<img src="screenshot.png" alt="Target Device" width="640"/>
+<img src="screenshot.png" alt="screenshot" width="320"/>
