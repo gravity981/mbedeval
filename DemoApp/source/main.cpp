@@ -58,6 +58,16 @@ int16_t encodeTemperature(float temperature)
   return (int16_t) roundf(temperature*100);
 }
 
+uint16_t encodeHumidity(float humidity)
+{
+  return (uint16_t) roundf(humidity*100);
+}
+
+uint32_t encodePressure(float pressure)
+{
+  return (uint32_t) roundf(pressure*1000);
+}
+
 void updateSensorValue() {
     batteryLevel++;
     if (batteryLevel > 100) {
@@ -70,6 +80,8 @@ void updateSensorValue() {
     hum_temp->get_humidity(&humidity);
     press_temp->get_pressure(&pressure);
     environmentalServicePtr->updateTemperature(encodeTemperature(temperature));
+    environmentalServicePtr->updateHumidity(encodeHumidity(humidity));
+    environmentalServicePtr->updatePressure(encodePressure(pressure));
 }
 
 void blinkCallback(void)
