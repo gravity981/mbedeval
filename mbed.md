@@ -6,7 +6,7 @@ Further information:
 * [How Mbed works](https://developer.mbed.org/handbook/How-mbed-works)
 * [ARM Mbed GitHub](https://github.com/ARMmbed)
 
-# mbed online  compiler
+# mbed online compiler
 Within the online compiler you can create new Mbed OS projects based your
 [mbed enabled board](https://developer.mbed.org/platforms/) and on template
 projects.
