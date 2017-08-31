@@ -20,6 +20,7 @@
 #include "ble/Gap.h"
 #include "ble/services/BatteryService.h"
 #include "XNucleoIKS01A2.h"
+#include "EnvironmentalService.h"
 
 // Instantiate the expansion board
 static XNucleoIKS01A2 *mems_expansion_board = XNucleoIKS01A2::instance(D14, D15, D4, D5);
@@ -33,17 +34,28 @@ static LSM303AGRAccSensor *accelerometer = mems_expansion_board->accelerometer;
 
 DigitalOut led1(LED1, 1);
 
-const static char     DEVICE_NAME[] = "BATTERY";
-static const uint16_t uuid16_list[] = {GattService::UUID_BATTERY_SERVICE};
+const static char     DEVICE_NAME[] = "CAMP17 DEMO NRF";
+static const uint16_t uuid16_list[] = {GattService::UUID_BATTERY_SERVICE,
+GattService::UUID_ENVIRONMENTAL_SERVICE};
 
 static uint8_t batteryLevel = 50;
 static BatteryService* batteryServicePtr;
+
+static float temperature = 25;
+static float pressure = 998;
+static float humidity = 31;
+static EnvironmentalService* environmentalServicePtr;
 
 static EventQueue eventQueue(/* event count */ 16 * EVENTS_EVENT_SIZE);
 
 void disconnectionCallback(const Gap::DisconnectionCallbackParams_t *params)
 {
     BLE::Instance().gap().startAdvertising();
+}
+
+int16_t encodeTemperature(float temperature)
+{
+  return (int16_t) roundf(temperature*100);
 }
 
 void updateSensorValue() {
@@ -53,6 +65,11 @@ void updateSensorValue() {
     }
 
     batteryServicePtr->updateBatteryLevel(batteryLevel);
+
+    hum_temp->get_temperature(&temperature);
+    hum_temp->get_humidity(&humidity);
+    press_temp->get_pressure(&pressure);
+    environmentalServicePtr->updateTemperature(encodeTemperature(temperature));
 }
 
 void blinkCallback(void)
@@ -96,6 +113,7 @@ void bleInitComplete(BLE::InitializationCompleteCallbackContext *params)
 
     /* Setup primary service */
     batteryServicePtr = new BatteryService(ble, batteryLevel);
+    environmentalServicePtr = new EnvironmentalService(ble);
 
     /* Setup advertising */
     ble.gap().accumulateAdvertisingPayload(GapAdvertisingData::BREDR_NOT_SUPPORTED | GapAdvertisingData::LE_GENERAL_DISCOVERABLE);
@@ -210,8 +228,8 @@ int main()
     acc_gyro->enable_x();
     acc_gyro->enable_g();
 
-    printSensorInfo();
-    printSensorValues();
+    //printSensorInfo();
+    //printSensorValues();
 
     eventQueue.dispatch_forever();
 
