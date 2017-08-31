@@ -9,9 +9,24 @@ git commit --amend | are neat
 git push --set-upstream origin master | bla
 git checkout -b <branch> | checkout new (-b) branch
 git pull --rebase | pull branch and rebase local commits on top
+git rm --cached <file> | stop tracking file
+
+# Git Ignore File
+* file name: ``.gitignore``
+* location on top level beneath .git dir
+
+## Pattern Format
+* Patterns ending with ``/`` match directories
+* Prefix ``!`` negates the pattern
+* Leading ``/`` matches the beginning of the pathname
+* ``*`` is wildcard
+* ``**`` has special meaning
+* Further information: [Pattern Format](https://git-scm.com/docs/gitignore#_pattern_format)
 
 # Merging
 :warning: Take care when discarding changes
+* In Source Tree there's no excplicit information if you're in merging state
+* git bash indicates the merging state next to the branch name
 
 # Bisect
 * Binary Search Commit

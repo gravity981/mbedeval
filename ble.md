@@ -1,7 +1,7 @@
 # Bluetooth Low Energy
 
 ## General
- * [GATTOverview](https://www.bluetooth.com/specifications/gatt/generic-attributes-overview)
+ * [GATT Overview](https://www.bluetooth.com/specifications/gatt/generic-attributes-overview)
   * data structure
 
 ## Bluetooth LE on Raspberry Pi
