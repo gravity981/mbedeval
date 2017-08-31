@@ -1,6 +1,6 @@
 # Camp 2017
 * [Git](git.md)
-* [Markdown](markdown.md) :trollface: 
+* [Markdown](markdown.md)
 * [Mbed](mbed.md)
 * [Bluetooth LE](ble.md)
-* [Demo App](demoapp.md)
+* [Demo App](demoapp.md) :floppy_disk:
