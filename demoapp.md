@@ -1,8 +1,11 @@
 # Demo App
-The demo app is based on Mbed-OS 5. The app offers a Bluetooth LE Service which allows to read characteristics wich provide environmental information.
+The demo app is based on Mbed-OS 5. The app offers a Bluetooth LE Service which provides environmental sensor information.
 
-## Target
-Target device is [Nordic nRF52-DK](https://developer.mbed.org/platforms/Nordic-nRF52-DK/) with [X-NUCLEO-IKS01A2](https://developer.mbed.org/components/X-NUCLEO-IKS01A2/) shield
+## Supported Target
+[Nordic nRF52-DK](https://developer.mbed.org/platforms/Nordic-nRF52-DK/) with [X-NUCLEO-IKS01A2](https://developer.mbed.org/components/X-NUCLEO-IKS01A2/) shield
+
+<!-- image with size params should be included with html syntax -->
+<img src="target.jpg" alt="Target Device" width="640"/>
 
 ## Build
 See [Custom Setup with GNU ARM embedded Toolchain](mbed.md)
