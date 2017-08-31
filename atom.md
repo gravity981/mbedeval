@@ -1,4 +1,5 @@
 # Atom IO editor
+
 ### Cheatsheet
 * ``ctrl + shift + p`` opens command search mask
 * ``ctrl + ,`` settings
@@ -9,11 +10,12 @@
 * language-batchfile
 * platformio-ide-terminal
 * switch-header-source
+* atom-beautify
 
 ### Open points
 * auto format code?
-* integrated terminal?
 * run gcc, make, etc.?
+* missing uncrustify to format code
 
 ### Other
 * [PlatformIO](http://platformio.org/)

@@ -8,15 +8,18 @@ The demo app is based on Mbed-OS 5. The app offers a Bluetooth LE Service which 
 <img src="target_lowres.jpg" alt="Target Device" width="640"/>
 
 ## Build
-See [Custom Setup with GNU ARM embedded Toolchain](mbed.md)
-* GNU ARM Toolchain
-* SRecord Tool (is used in the process to combine Softdevice with user application)
-* make (mingw32-make on windows)
+* run ``build.cmd`` located in DemoApp/
+  * [build.cmd](DemoApp/build.cmd)
+* More Informamtion [Custom Setup with GNU ARM embedded Toolchain](mbed.md)
 
 ## Deploy
 * Connect dev board via USB to computer
-* Copy & Paste ``.hex`` file from build output to mbed USB drive (JLINK)
+* run ``deploy.cmd`` located in DemoApp/
 * Application is installed and started automatically
 
 ## Read sensor data
-TBD
+* Install nRF Connect on Android Smartphone
+* Scan for devices
+* Connect to **CAMP17 DEMOAPP**
+
+<img src="screenshot.png" alt="Target Device" width="640"/>
