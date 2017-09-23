@@ -34,20 +34,10 @@ The online IDE lacks some features I think every good IDE should have
 It is possible to export online projects for a couple of toolchains
 I want to see which toolchain covers the most points mentioned above.
 
-## Keil
-* An IDE from ARM for ARM
-  * Flashing & debugging work very well
-  * Integrated target configuration
-  * Integrated build configuration
-* Limited refactoring features
-* Bad usability compared to Visual Studio (with Resharper) or IntelliJ
-
-## Eclipse with ARMGCC
-TBD
-
-## Alternatives
-* Customize a text editor, inspired by: [Why IDEs are wrong for embedded developers](https://spin.atomicobject.com/2012/09/12/why-ides-are-wrong-for-embedded-developers/)
-  * E.g. [Atom](https://atom.io/)
+In another approach I want to customize a text editor,
+inspired by: [Why IDEs are wrong for embedded developers](https://spin.atomicobject.com/2012/09/12/why-ides-are-wrong-for-embedded-developers/)
+* E.g. [Atom](https://atom.io/)
+  * My atom config can be found [here](atom.md)
 * Use different IDEs for different tasks
   * Keil for building and Debugging
     * How to automate/script Keil Build? Mbed CLI Tools?
@@ -55,19 +45,37 @@ TBD
   to develop application
     * How to configure build for simulation on localhost?
 
-### Custom Setup with GNU ARM embedded Toolchain
-#### Linux
+## Keil Project
+* IDE from ARM for ARM
+  * Flashing & debugging work very well
+  * Integrated target configuration
+  * Integrated build configuration
+* Limited refactoring features
+* Bad usability compared to Visual Studio (with Resharper) or IntelliJ
+
+
+## GNU ARM embedded Make Project
+
+### Linux
 * Install GNU ARM Toolchain: [See here](http://marksolters.com/programming/2016/06/22/arm-toolchain-16-04.html)
-* srec_cat missing
-  * ``sudo apt-get install srecord``
+* install srec_cat ``sudo apt-get install srecord``
 
-#### Windows with mingw32 make
-* test with mingw toolchain: make (e=2): The  system cannot  find the file specified
-  * install GNU ARM Embedded Toolchain: [Link](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads)
-* srec_cat binary not found
-  * install SRecord Tools from [here](https://sourceforge.net/projects/srecord/files/srecord-win32/)
+### Windows
+* install make, there are multiple options to get it
+  * it is included in [MinGW](http://www.mingw.org/)
+  * or here: [Make for Windows](http://gnuwin32.sourceforge.net/packages/make.htm)
+* install GNU ARM Embedded Toolchain: [Link](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads)
+* install SRecord Tools from [here](https://sourceforge.net/projects/srecord/files/srecord-win32/)
 
-#### Integrate Make-Project in CLion
+don't forget to add the tools to PATH
+
+
+## Alternatives
+
+### export as Eclipse Project
+TBD
+
+### Integrate Make-Project in CLion
 * TBD edit CMakeLists.txt to use make file for building
 * TBD to make CLion analyse Code, in CMakeLists.txt sources and include paths
 must be defined
@@ -78,7 +86,7 @@ must be defined
 ### Mbed CLI Tools
 * Try out [Mbed CLI Tools](https://docs.mbed.com/docs/mbed-os-handbook/en/latest/getting_started/blinky_cli/)
 
-### Mbed Design
+## Mbed Design
 * [Mbed OS API Reference](https://docs.mbed.com/docs/mbed-os-api-reference/en/latest/)
 * to add support for new microcontroller, api's from hal must be implemented
   * [Modular Programming in C ](http://www.embedded.com/design/prototyping-and-development/4023876/Modular-Programming-in-C)
